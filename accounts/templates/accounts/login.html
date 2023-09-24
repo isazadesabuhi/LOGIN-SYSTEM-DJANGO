@@ -1,0 +1,7 @@
+<form method="post">
+  <!-- adds a hidden field to the form for the CSRF token -->
+  {% csrf_token %}
+  <!-- rendres the form as a series of <p> tags -->
+  {{ form.as_p }}
+  <button type="submit">Login</button>
+</form>
