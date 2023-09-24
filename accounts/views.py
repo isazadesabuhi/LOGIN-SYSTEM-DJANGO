@@ -34,7 +34,7 @@ def login_view(request):
             #log the user in
             login(request,user)
             #redirect to home page
-            return redirect('home')
+            return redirect('/accounts/home')
     else:
         #create a form instance with no data
         form = AuthenticationForm()
@@ -47,4 +47,8 @@ def logout_view(request):
     if request.method == 'POST':
         #log the user out
         logout(request)
-        return redirect('home') #redirect to home page
+        return redirect('/accounts/login') #redirect to home page
+    
+
+def home(request):
+    return render(request,'accounts/home.html')

@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html>
+  {% if user.is_authenticated %}
+
+  <form method="post" action="{% url 'logout' %}">
+    {% csrf_token %}
+    <input type="submit" value="Logout" />
+  </form>
+  {% endif %}
+  <div>HOME PAGE</div>
+</html>
